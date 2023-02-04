@@ -17,12 +17,12 @@ let gameOver = false;
 let intV = null;
 let reqA = null;
 const kiritoImage = new Image(10,10); // Using optional size for image
-kiritoImage.src = "./img/kirito.jpg";
+kiritoImage.src = "../img/kirito.jpg";
 const gameOverImg = new Image(width,height);
-gameOverImg.src = "./img/gameOver.jpg";
+gameOverImg.src = "../img/gameOver.jpg";
 const bgm = new Audio("./music/Sword Art Online ost 刀劍神域.mp3");
 const blueEyesDemonImg = new Image();
-blueEyesDemonImg.src = "./img/blueEyes.jpg";
+blueEyesDemonImg.src = "../img/blueEyes.jpg";
 
 // kiritoImage.addEventListener("load",function(){
 //     ctx.drawImage(kiritoImage,0,0,10,10);
