@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>貪吃桐人</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet/less" type="text/css" href="./less/style.less" />
+    </head>
+    <body>
+        <div id="game-window">
+            <div id="content">
+                <div id="menu">
+                    <div>
+                        <button id="start">start</button>
+                    </div>
+                    <div id="option-container">
+                        <button id="option">option</button>
+                        <div id="item-colum">
+                            <ul>
+                                <li>
+                                    <label for="volume">BGM</label>
+                                    <input type="range" id="volume" name="volume" 
+                                    min="0" max="100" value="50" step="10">
+                                </li>
+                                <li>item</li>
+                                <li>item</li>
+                                <li>item</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button id="exit">exit</button>
+                </div>
+                <div id="stage">
+                    <canvas id="myCanvas" width="800" height="600"></canvas>
+                    <div id="game-hint">start!</div>
+                    <div id="score-panel">
+                        <div id="score">score: 0</div>
+                        <div id="level">Level: 1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
