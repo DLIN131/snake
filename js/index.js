@@ -16,20 +16,45 @@ let height = c.height;
 let gameOver = false;
 let intV = null;
 let reqA = null;
-const kiritoImage = new Image(10,10); // Using optional size for image
-kiritoImage.src = "../img/kirito.jpg";
-const gameOverImg = new Image(width,height);
-gameOverImg.src = "../img/gameOver.jpg";
-const bgm = new Audio("./music/Sword Art Online ost 刀劍神域.mp3");
-const blueEyesDemonImg = new Image();
-blueEyesDemonImg.src = "../img/blueEyes.jpg";
+// const kiritoImage = new Image(10,10); // Using optional size for image
+// kiritoImage.src = "../img/kirito.jpg";
+// const gameOverImg = new Image(width,height);
+// gameOverImg.src = "../img/gameOver.jpg";
+// const blueEyesDemonImg = new Image();
+// blueEyesDemonImg.src = "../img/blueEyes.jpg";
 
+const bgm = new Audio("./music/Sword Art Online ost 刀劍神域.mp3");
 // kiritoImage.addEventListener("load",function(){
 //     ctx.drawImage(kiritoImage,0,0,10,10);
 // })
 volumeEle.addEventListener("change",function(){
     bgm.volume = this.value/100;
 })
+
+
+// function drawSnake(x, y, w , h){
+//     kiritoImage.onload = function(){
+//         ctx.drawImage(kiritoImage,x,y,w,h);
+//     }
+//     kiritoImage.src = "../img/kirito.jpg";
+// }
+// drawSnake(10,10,10,10)
+// function drawFood(x, y, w , h){
+//     blueEyesDemonImg.onload = function(){
+//         ctx.drawImage(blueEyesDemonImg,x,y,w,h);
+//     }
+//     blueEyesDemonImg.src = "../img/blueEyes.jpg";
+// }
+// drawFood(20,20,10,10)
+// function drawGameOver(x, y, w , h){
+//     gameOverImg.onload = function(){
+//         ctx.drawImage(gameOverImg,x,y,w,h);
+//     }
+//     gameOverImg.src = "../img/gameOver.jpg";
+// }
+// drawGameOver(10,10,10,10)
+
+
 
 class Food{
     constructor(x,y){
@@ -39,9 +64,9 @@ class Food{
         this.height = 10;
     }
     draw(){
-        // ctx.fillStyle = "black";
-        // ctx.fillRect(this.x,this.y,this.width,this.height);
-        ctx.drawImage(blueEyesDemonImg,this.x,this.y,this.width,this.height);
+        ctx.fillStyle = "black";
+        ctx.fillRect(this.x,this.y,this.width,this.height);
+        // ctx.drawImage(blueEyesDemonImg,this.x,this.y,this.width,this.height);
     }
     changePosition(){
         let randomPositionX  = Math.round(Math.random()*((width-this.width)/10))*10;
@@ -51,6 +76,9 @@ class Food{
         //console.log(this.x + " " + this.y);
     }
 }
+
+
+
 
 class Snake{
     constructor(x,y){
@@ -71,9 +99,10 @@ class Snake{
     draw(){
         //ctx.fillRect(this.x,this.y,10,10);
         for(let i=0;i<this.body.length;i++){
-            // ctx.fillStyle = this.color[score%this.color.length];
-            // ctx.strokeRect(this.body[i].x,this.body[i].y,this.width,this.height);
-            ctx.drawImage(kiritoImage,this.body[i].x,this.body[i].y,this.width,this.height);
+            ctx.fillStyle = this.color[score%this.color.length];
+            ctx.strokeRect(this.body[i].x,this.body[i].y,this.width,this.height);
+            // ctx.drawImage(kiritoImage,this.body[i].x,this.body[i].y,this.width,this.height);
+
 
         }
     }
